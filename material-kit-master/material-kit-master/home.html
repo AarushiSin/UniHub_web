@@ -13,8 +13,14 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
   <!-- Material Kit CSS -->
   <link href="assets/css/material-kit.css?v=3.0.0" rel="stylesheet" />
-   
+</head>
   </head>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script>
+  $(function(){
+    $('#navbar').load('navbar.html');
+  });
+  </script>
    <!-- Custom CSS for hover effect -->
    <style>
 
@@ -48,14 +54,13 @@ h2.title {
 </head>
 <body>
 
- <!-- navbar -->
   <!-- Navbar Container -->
   <div id="navbar-container"></div>
 
 <!-- JavaScript to Load the Navbar -->
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    fetch('pages/includes/navbar.html') // Corrected path to navbar.html
+    fetch('pages/includes/navbar.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('navbar-container').innerHTML = data;
@@ -63,7 +68,6 @@ h2.title {
       .catch(error => console.error('Error loading navbar:', error));
   });
 </script>
-
  <!-- end navbar -->
 
 
