@@ -3,7 +3,7 @@ const API_KEY = '9d0236ef4d9e4d45a05a9295ccb3cd3a'; // Replace with your Spoonac
 // Function to search for recipes
 function searchRecipes() {
     const query = document.getElementById('recipe-search').value;
-    const apiUrl = `https://api.spoonacular.com/recipes/complexSearch?query=${query}&number=5&apiKey=${API_KEY}`;
+    const apiUrl = `https://api.spoonacular.com/recipes/complexSearch?query=${query}&number=3&apiKey=${API_KEY}`;
 
     fetch(apiUrl)
         .then(response => response.json())
