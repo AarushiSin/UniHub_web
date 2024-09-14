@@ -3,3 +3,13 @@ body {
     text-align: center;
     background-color: #f0f0f0;
 }
+
+/* Hover effect for dropdown */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; /* Optional: Adjusts the dropdown's position */
+}
+
+.navbar-nav .dropdown-menu {
+    border-radius: 0; /* Optional: Makes the dropdown look consistent with other nav items */
+}
