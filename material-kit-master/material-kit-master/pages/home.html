@@ -44,6 +44,16 @@ h2.title {
   padding: 15px 30px; /* Keep padding for the larger button */
 }
 
+.glow-text {
+  color: #00aaff; /* Set the text color to blue */
+  text-shadow: 0 0 10px #00aaff, 0 0 20px #00aaff, 0 0 30px #00aaff;
+  transition: all 0.3s ease-in-out;
+}
+
+.glow-text:hover {
+  text-shadow: 0 0 20px #00aaff, 0 0 30px #00aaff, 0 0 40px #00aaff;
+}
+
   </style>
 
 </head>
@@ -71,7 +81,7 @@ h2.title {
       <div class="row">
         <div class="col-md-8 mx-auto">
           <div class="text-center">
-            <h1 class="text-white">UniHub</h1>
+            <h1 class="text-white glow-text">UniHub</h1>
             <h3 class="text-white">Your One Stop Shop for All Things Uni</h3>
           </div>
         </div>
