@@ -1,4 +1,6 @@
-// server.js
+const axios = require('axios');
+const cheerio = require('cheerio');
+const puppeteer = require('puppeteer');  // For dynamic scraping
 const express = require('express');
 const path = require('path');
 const app = express();
@@ -74,4 +76,27 @@ app.get('/', (req, res) => {
 
 app.get('/transportation', (req, res) => {
   res.render('transportation');
+});
+
+app.get('/api/apartments', async (req, res) => {
+  try {
+    const url = 'https://www.apartments.com/blacksburg-va/?bb=i27qqyik8Hrl9toM';
+    const { data } = await axios.get(url);  // Use Axios to get the page HTML
+    const $ = cheerio.load(data);           // Load the HTML into Cheerio
+
+    const apartments = [];
+
+    // Scrape the apartment data from the page
+    $('.placard').each((index, element) => {
+      const title = $(element).find('.property-title').text().trim();
+      const location = $(element).find('.property-address').text().trim();
+      const price = $(element).find('.property-pricing').text().trim();
+      apartments.push({ title, location, price });
+    });
+
+    res.json(apartments);
+  } catch (error) {
+    console.error('Error scraping apartment data:', error);
+    res.status(500).send('Error scraping apartment data');
+  }
 });
