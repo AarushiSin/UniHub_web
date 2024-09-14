@@ -1,68 +1,116 @@
-<!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<!doctype html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
-  <title>UniHub</title>
-  <!-- Fonts and icons -->
+  <title>Housing</title>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+  <!-- Material Kit CSS -->
   <link rel="stylesheet" href="/material-kit-master/assets/css/material-kit.css">
   <script src="/material-kit-master/assets/js/material-kit.js"></script>
 
-  <!-- Font Awesome Icons -->
-  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
   <!-- Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
-  <!-- CSS Files -->
-  <link id="pagestyle" href="../assets/css/material-kit.css?v=3.0.4" rel="stylesheet" />
 </head>
 
 <body>
-    <!-- Navbar Dark -->
-  <!-- Navbar Container -->
-  <div id="navbar-container"></div>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-transparent navbar-color-on-scroll fixed-top navbar-light">
+    <div class="container">
+      <div class="navbar-translate">
+        <a class="navbar-brand" href="/">UniHub</a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/resources">Resources</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/housing">Housing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/transportation">Transportation</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-<!-- JavaScript to Load the Navbar -->
+  <!-- Main Content -->
+  <div class="container mt-5 pt-5">
+    <h1 class="text-center">Available Apartments</h1>
+
+    <!-- Google Map Embed -->
+    <div class="map-container text-center">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3075.888146045885!2d-80.41446522473105!3d37.229573719751634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x884d950d5e4722c9%3A0xe6f51f56f7d50f12!2sBlacksburg%2C%20VA!5e0!3m2!1sen!2sus!4v1634082607803!5m2!1sen!2sus"
+        width="600" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
+    </div>
+
+    <!-- Apartment Listings -->
+    <div id="apartments" class="mt-5"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <nav class="float-left">
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About Us</a></li>
+            </ul>
+          </nav>
+          <div class="copyright float-right">
+            &copy; 2024, UniHub.
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Material Kit JS -->
+  <script src="/assets/js/material-kit.js"></script>
+
+  <!-- Script to Fetch Apartments Data and Display -->
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    fetch('includes/navbar.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('navbar-container').innerHTML = data;
-      })
-      .catch(error => console.error('Error loading navbar:', error));
-  });
+  async function fetchApartments() {
+    try {
+      const response = await fetch('/api/apartments');
+      const apartments = await response.json();
+      const apartmentsDiv = document.getElementById('apartments');
+
+      apartments.forEach(apartment => {
+        const apartmentDiv = document.createElement('div');
+        apartmentDiv.classList.add('card', 'mt-3');
+        apartmentDiv.innerHTML = `
+          <div class="card-body">
+            <h5 class="card-title">${apartment.title}</h5>
+            <p class="card-text">Location: ${apartment.location}</p>
+            <p class="card-text">Price: ${apartment.price}</p>
+          </div>
+        `;
+        apartmentsDiv.appendChild(apartmentDiv);
+      });
+    } catch (error) {
+      console.error('Error fetching apartments:', error);
+    }
+  }
+
+  // Fetch apartment data when the page loads
+  window.onload = fetchApartments;
 </script>
-    <!-- End Navbar -->
-     
-     <!-- Added map embedding for transportation-->
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Bus Route Map</title>
-      <style>
-        body {
-          font-family: Arial, sans-serif;
-          margin: 0;
-          padding: 0;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
-        iframe {
-          border: none;
-          width: 100%;
-          height: 90vh;
-        }
-      </style>
-    </head>
-    <body>
-      <h1>Live Bus Route Map</h1>
-      <iframe src="https://ridebt.org/live-map" title="Bus Route Map"></iframe>
-    </body>
-    </html>
-    <!-- ending of map embedding-->
+</body>
+
+</html>
