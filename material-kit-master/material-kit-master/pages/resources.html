@@ -19,26 +19,42 @@
   <link id="pagestyle" href="../assets/css/material-kit.css?v=3.0.4" rel="stylesheet" />
 </head>
 
-<body class="bg-dark text-light"> <!-- Added bg-dark class for black background -->
-  
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg position-absolute top-0 z-index-3 w-100 shadow-none my-3 navbar-transparent">
-    <div class="container">
-      <a class="navbar-brand text-white" href="javascript:;">UniHub</a>
-      <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon mt-2">
-          <span class="navbar-toggler-bar bar1"></span>
-          <span class="navbar-toggler-bar bar2"></span>
-          <span class="navbar-toggler-bar bar3"></span>
-        </span>
-      </button>
-      <div class="collapse navbar-collapse w-100 pt-3 pb-2 py-lg-0 ms-lg-12 ps-lg-5" id="navigation">
-        <ul class="navbar-nav navbar-nav-hover ms-auto">
-          <li class="nav-item my-auto ms-3 ms-lg-0">
-            <a href="sign-in.html" class="btn btn-sm bg-gradient-primary mb-0 me-1 mt-2 mt-md-0">Sign In/Register</a>
+<body>
+  <!-- Navbar Dark -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-dark z-index-3 py-3">
+    <div class="container d-flex justify-content-between">
+      <!-- Left: Brand -->
+      <a class="navbar-brand text-white" href="https://demos.creative-tim.com/material-kit/presentation" rel="tooltip" title="Designed and Coded by Creative Tim" data-placement="bottom" target="_blank">
+        UniHub
+      </a>
+
+      <!-- Center: Navbar Links -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbar-header-2">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="javascript:;">Resources</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="javascript:;">Housing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="javascript:;">Transportation</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white" href="#" id="dropdownMenuButton">
+              Self Care
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-item" href="./pages/about-us.html">About Us</a></li>
+              <li><a class="dropdown-item" href="./pages/contact-us.html">Contact Us</a></li>
+              <li><a class="dropdown-item" href="./pages/author.html">Author</a></li>
+            </ul>
           </li>
         </ul>
       </div>
+
+      <!-- Right: Sign In/Register Button -->
+      <button class="btn btn-primary" type="button">Sign In/Register</button>
     </div>
   </nav>
   <!-- End Navbar -->
@@ -48,6 +64,7 @@
     <div class="row justify-content-center">
       <!-- Card 1: Map -->
       <div class="col-lg-3 col-md-6 mb-4">
+        <a href="https://campusmap.aws.gis.cloud.vt.edu/" target="_blank" class="text-decoration-none">
         <div class="card bg-light text-dark">
           <div class="card-body text-center">
             <i class="material-icons md-48">map</i>
@@ -55,9 +72,11 @@
             <p class="card-text">Find your way around campus.</p>
           </div>
         </div>
+    </a>
       </div>
       <!-- Card 2: Gym -->
       <div class="col-lg-3 col-md-6 mb-4">
+        <a href="https://recsports.vt.edu/fitnessprograms/groupexercise.html" target="_blank" class="text-decoration-none">
         <div class="card bg-light text-dark">
           <div class="card-body text-center">
             <i class="material-icons md-48">fitness_center</i>
@@ -65,6 +84,7 @@
             <p class="card-text">Stay fit with our campus gyms.</p>
           </div>
         </div>
+    </a>
       </div>
       <!-- Card 3: Dining -->
       <div class="col-lg-3 col-md-6 mb-4">
