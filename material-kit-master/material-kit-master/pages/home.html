@@ -13,7 +13,8 @@
   <!-- Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
   <!-- Material Kit CSS -->
-  
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
    <!-- Custom CSS for hover effect -->
    <style>
@@ -101,8 +102,9 @@ h2.title {
 <div class="container mt-5">
   <div class="section text-center">
     <h2 class="title display-3">Purpose</h2>
+    <div  data-aos="fade-up" data-aos-duration="1000">
     <p class="lead mt-4">UniHub is dedicated to connecting students with essential resources such as housing, transportation, and self-care. We aim to provide a one-stop platform that simplifies student life, making it easier for you to focus on your education and personal growth. Join our community today and discover all that UniHub has to offer.</p>
-
+  </div>
   </div>
   </div>
 </div>
@@ -120,7 +122,7 @@ h2.title {
 
   <!-- Images Section in a single row -->
   <div class="row justify-content-center mt-5">
-    <div class="col-md-3 text-center">
+    <div class="col-md-3 text-center" data-aos="fade-up" data-aos-duration="1000">
       <img src="material-kit-master/assets/img/micheal_pic.jpg" class="img-fluid rounded-circle" alt="Michael Carrasquillo">
       <div class="description mt-2">
         <p>Michael Carrasquillo</p>
@@ -128,7 +130,7 @@ h2.title {
       </div>
     </div>
 
-    <div class="col-md-3 text-center">
+    <div class="col-md-3 text-center" data-aos="fade-up" data-aos-duration="1000">
       <img src="material-kit-master/assets/img/aarushi_pic.jpg" class="img-fluid rounded-circle" alt="Aarushi Sinha">
       <div class="description mt-2">
         <p>Aarushi Sinha</p>
@@ -136,7 +138,7 @@ h2.title {
       </div>
     </div>
 
-    <div class="col-md-3 text-center">
+    <div class="col-md-3 text-center" data-aos="fade-up" data-aos-duration="1000">
       <img src="material-kit-master/assets/img/sejal_pic.jpg" class="img-fluid rounded-circle" alt="Sejal Jain">
       <div class="description mt-2">
         <p>Sejal Jain</p>
@@ -144,7 +146,7 @@ h2.title {
       </div>
     </div>
 
-    <div class="col-md-3 text-center">
+    <div class="col-md-3 text-center" data-aos="fade-up" data-aos-duration="1000">
       <img src="material-kit-master/assets/img/aayan_pic.jpg" class="img-fluid rounded-circle" alt="Aayan Chaturvedi">
       <div class="description mt-2">
         <p>Aayan Chaturvedi</p>
@@ -199,6 +201,12 @@ h2.title {
     </div>
   </footer>
   <!--end footer-->
+<!-- AOS JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 
 </body>
 
