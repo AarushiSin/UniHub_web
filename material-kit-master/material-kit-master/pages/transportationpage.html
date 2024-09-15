@@ -19,6 +19,21 @@
   <link id="pagestyle" href="../assets/css/material-kit.css?v=3.0.4" rel="stylesheet" />
 </head>
 
+<style>
+    /* Adjust the size of the cards */
+.card {
+  padding: 20px;
+  max-width: 90%; /* Adjust the maximum width */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect: slightly darker background color */
+.card:hover {
+  background-color: #9e9c9c; /* A shade darker */
+  transform: scale(0.98); /* Slightly reduce size */
+}
+</style>
+
 <body>
     <!-- Navbar Dark -->
   <!-- Navbar Container -->
@@ -60,7 +75,7 @@
         <a href="transportation.html" target="_blank" class="text-decoration-none">
         <div class="card h-100 bg-light text-dark">
           <div class="card-body text-center">
-            <i class="material-icons md-48">map</i>
+            <i class="material-icons md-48">directions_bus</i>
             <h4 class="card-title mt-3">Blacksburg Transit</h4>
             <p class="card-text">Find your way around campus.</p>
           </div>
@@ -83,10 +98,10 @@
 
       <!-- Card 3: RideShare -->
       <div class="col-lg-6 col-md-6 mb-4">
-        <a href="https://www.registrar.vt.edu/dates-deadlines/academic-calendar.html" target="_blank" class="text-decoration-none">
+        <a href="https://getaround.vt.edu/ride-share.html" target="_blank" class="text-decoration-none">
         <div class="card h-100 bg-light text-dark">
           <div class="card-body text-center">
-            <i class="material-icons md-48">calendar_today</i>
+            <i class="material-icons md-48">directions_car</i>
             <h4 class="card-title mt-3">RideShare</h4>
             <p class="card-text">Organize rides with other people.</p>
           </div>
@@ -96,7 +111,7 @@
 
       <!-- Card 4: Bikes -->
       <div class="col-lg-6 col-md-6 mb-4">
-        <a href="https://foodpro.students.vt.edu/menus/" target="_blank" class="text-decoration-none">
+        <a href="https://getaround.vt.edu/getting-around-vt/biking-and-walking.html" target="_blank" class="text-decoration-none">
         <div class="card h-100 bg-light text-dark">
           <div class="card-body text-center">
             <i class="material-icons md-48">pedal_bike</i>

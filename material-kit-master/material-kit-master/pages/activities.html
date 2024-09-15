@@ -27,6 +27,20 @@
       height: 150px;
       object-fit: cover;
     }
+
+    /* Adjust the size of the cards */
+.card {
+  padding: 20px;
+  max-width: 90%; /* Adjust the maximum width */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect: slightly darker background color */
+.card:hover {
+  background-color: #9e9c9c; /* A shade darker */
+  transform: scale(0.98); /* Slightly reduce size */
+}
+
   </style>
 </head>
 
@@ -74,7 +88,7 @@
         <a href="https://hokiesports.com/sports/football" target="_blank" class="text-decoration-none">
         <div class="card h-100 bg-light text-dark">
           <div class="card-body text-center">
-            <i class="material-icons md-48">football</i>
+            <i class="material-icons md-48">sports_football</i>
             <h4 class="card-title mt-3">Football</h4>
             <p class="card-text">Keep up with Hokie football.</p>
           </div>
