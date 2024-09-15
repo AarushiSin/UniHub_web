@@ -16,35 +16,62 @@
 </head>
 
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-transparent navbar-color-on-scroll fixed-top navbar-light">
-    <div class="container">
-      <div class="navbar-translate">
-        <a class="navbar-brand" href="/">UniHub</a>
-      </div>
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/resources">Resources</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/housing">Housing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/transportation">Transportation</a>
-          </li>
-        </ul>
+  <!-- Navbar Container -->
+  <div id="navbar-container"></div>
+
+<!-- JavaScript to Load the Navbar -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    fetch('material-kit-master/pages/includes/navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-container').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading navbar:', error));
+  });
+</script>
+ <!-- end navbar -->
+
+  <!-- Housing Header -->
+<div class="page-header min-vh-50" style="background-image: url('https://housing.vt.edu/content/housing_vt_edu/en/experience/YourResidenceHall/jcr:content/article-image.transform/xl-medium/image.jpg'); background-size: cover; background-position: center;">
+  <span class="mask bg-gradient-dark opacity-6"></span>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 mx-auto">
+        <div class="text-center">
+          <h1 class="text-white">Housing</h1>
+        </div>
       </div>
     </div>
-  </nav>
+  </div>
+</div>
 
-  <!-- Main Content -->
-  <div class="container mt-5 pt-5">
-    <h1 class="text-center">Available Apartments</h1>
+<!-- On Campus Housing -->
+<div class="container mt-5">
+  <div class="row d-flex align-items-stretch justify-content-center">
+    <!--first row-->
+      <!-- Card 1: campus housing -->
+    <div class="col-lg-4 col-md-6 mb-4">
+      <a href="https://www.vt.edu/campus-life/housing.html" target="_blank" class="text-decoration-none">
+      <div class="card h-100 bg-light text-dark">
+        <div class="card-body text-center">
+          <h4 class="card-title mt-3">On Campus Housing</h4>
+        </div>
+      </div>
+  </a>
+  </div>
+    <!-- Card 2: Apartments-->
+    <div class="col-lg-4 col-md-6 mb-4">
+      <a href="https://www.apartments.com/blacksburg-va/" target="_blank" class="text-decoration-none">
+      <div class="card bg-light text-dark">
+        <div class="card-body text-center">
+          <h4 class="card-title mt-3">Apartments in Blacksburg </h4>
+        </div>
+      </div>
+  </a>
+    </div>
 
+    
     <!-- Google Map Embed -->
     <div class="map-container text-center">
       <iframe 
@@ -61,24 +88,29 @@
     <div id="apartments" class="mt-5"></div>
   </div>
 
-  <!-- Footer -->
-  <footer class="footer">
+  <!--footer-->
+  <footer class="footer pt-5 mt-5">
     <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <nav class="float-left">
-            <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/about">About Us</a></li>
+      <div class=" row">
+        <div class="col-md-2 col-sm-6 col-6 mb-4">
+        </div>
+        <div class="col-md-2 col-sm-6 col-6 mb-4">
             </ul>
-          </nav>
-          <div class="copyright float-right">
-            &copy; 2024, UniHub.
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="text-center">
+            <p class="text-dark my-4 text-sm font-weight-normal">
+              All rights reserved. Copyright © <script>
+                document.write(new Date().getFullYear())
+              </script> UniHub </a>
+            </p>
           </div>
         </div>
       </div>
     </div>
   </footer>
+  <!--end footer-->
 
   <!-- Material Kit JS -->
   <script src="/assets/js/material-kit.js"></script>
