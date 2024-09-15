@@ -16,6 +16,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Beiruti:wght@200..900&display=swap" rel="stylesheet">
 
 
+
   <!-- Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
   <!-- Material Kit CSS -->
@@ -62,6 +63,21 @@ h2.title {
 }
 
   </style>
+  <style>
+    .panda-container {
+      position: absolute;
+      top: 50%; /* Adjust as needed */
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2; /* Ensure it appears over other content */
+    }
+
+    /* Ensure your main content is behind the panda */
+    .main-content {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
 
 </head>
 <body>
@@ -82,7 +98,6 @@ h2.title {
 </script>
  <!-- end navbar -->
 
-
 <div class="page-header min-vh-100" style="background-color: black;">    <span class="mask bg-gradient-dark opacity-6"></span>
     <div class="container">
       <div class="row">
@@ -95,6 +110,8 @@ h2.title {
       </div>
     </div>
   </div>
+  
+</div>
   <a href="sign-in.html" target="_blank" class="text-decoration-none"></a>
     <div class="text-center">
       <a href="sign-in.html" class="btn btn-primary w-100 h-100" style="font-size: 2rem; padding: 1.5rem; display: block;">Join Now!</a>
