@@ -76,32 +76,7 @@
   z-index: 1000;
 }
 
-/* Sticky class */
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: add a shadow for emphasis */
-}
 </style>
-
-<script>
-  // Function to add/remove the sticky class
-  window.onscroll = function() {
-    stickyNavbar();
-  };
-
-  var navbar = document.querySelector('nav.navbar'); // Select the navbar
-  var sticky = navbar.offsetTop; // Get the initial top position of the navbar
-
-  function stickyNavbar() {
-    if (window.pageYOffset > sticky) {
-      navbar.classList.add("sticky");
-    } else {
-      navbar.classList.remove("sticky");
-    }
-  }
-</script>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-dark z-index-3 py-3">
   <div class="container d-flex justify-content-between">
@@ -126,6 +101,9 @@
         <li class="nav-item">
           <a class="nav-link text-white" href="wellness.html">Wellness</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="wellness.html">Activies</a>
+        </li>
       </ul>
     </div>
 
@@ -133,19 +111,6 @@
     <a href="/sign-in.html">
       <button class="btn btn-primary navbar-btn" type="button">Sign In/Register</button>
     </a>
+    <nav>
 
-<!-- JavaScript to make the navbar sticky -->
-<script>
-  window.onscroll = function() { stickNavbar() };
 
-  var navbar = document.querySelector('nav.navbar');
-  var sticky = navbar.offsetTop;
-
-  function stickNavbar() {
-    if (window.pageYOffset >= sticky) {
-      navbar.classList.add("sticky");
-    } else {
-      navbar.classList.remove("sticky");
-    }
-  }
-</script>

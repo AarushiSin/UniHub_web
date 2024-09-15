@@ -39,10 +39,16 @@
       flex: 0 0 calc(25% - 20px); /* 4 items in a row */
       background-color: #f8f8f8;
       border-radius: 15px;
-      padding: 15px;
+      padding: 10px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       text-align: center;
     }
+
+    .small-btn {
+  padding: 5px 10px;
+  font-size: 0.8rem;
+}
+
   </style>
 
 </head>
@@ -156,16 +162,23 @@
 </div>
   
   <!-- Recipe Search Section -->
-<div class="container mt-4">
-  <h2 class="text-center">Search for Healthy Recipes!</h2>
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      <input type="text" id="recipe-search" class="form-control" placeholder="Search for recipes...">
-      <button class="btn btn-primary mt-3 w-100" onclick="searchRecipes()">Search</button>
+  <div class="container mt-4">
+    <h2 class="text-center">Search for Healthy Recipes!</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <!-- Input field -->
+        <input type="text" id="recipe-search" class="form-control" placeholder="Search for recipes..." style="height: 70px; font-size: 1.6rem;">
+      </div>
     </div>
+    <!-- Search button centered below the input field -->
+    <div class="row justify-content-center mt-3">
+      <div class="col-md-4 text-center">
+        <button class="btn btn-primary w-70" style="padding: 10px; font-size: 1.2rem;" onclick="searchRecipes()">Search</button>
+      </div>
+    </div>
+    <div id="recipe-results" class="row justify-content-center mt-5"></div>
   </div>
-  <div id="recipe-results" class="row justify-content-center mt-5"></div>
-</div>
+  
 
 <!--end recipe search section-->
 
@@ -190,6 +203,7 @@
   function searchRecipes() {
     const query = document.getElementById('recipe-search').value;
     const apiUrl = `https://api.spoonacular.com/recipes/complexSearch?query=${query}&number=3&apiKey=${API_KEY}`;
+    
 
     fetch(apiUrl)
       .then(response => response.json())
@@ -208,7 +222,7 @@
             <div class="card-body text-center">
               <h4 class="card-title">${recipe.title}</h4>
               <img src="${recipe.image}" alt="${recipe.title}" class="img-fluid mb-3">
-              <a href="https://spoonacular.com/recipes/${recipe.title.replace(/ /g, '-').toLowerCase()}-${recipe.id}" target="_blank" class="btn btn-primary">View Recipe</a>
+              <a href="https://spoonacular.com/recipes/${recipe.title.replace(/ /g, '-').toLowerCase()}-${recipe.id}" target="_blank" class="btn btn-primary" style="padding: 5px 10px; font-size: 0.8rem;">View Recipe</a>
             </div>
           </div>
         </div>
