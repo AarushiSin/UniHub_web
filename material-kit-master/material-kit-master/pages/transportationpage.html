@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <title>UniHub</title>
+  <!-- Fonts and icons -->
+  <link rel="stylesheet" href="/material-kit-master/assets/css/material-kit.css">
+  <script src="/material-kit-master/assets/js/material-kit.js"></script>
+
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+  <!-- CSS Files -->
+  <link id="pagestyle" href="../assets/css/material-kit.css?v=3.0.4" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Navbar Dark -->
+  <!-- Navbar Container -->
+  <div id="navbar-container"></div>
+
+<!-- JavaScript to Load the Navbar -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    fetch('includes/navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-container').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading navbar:', error));
+  });
+</script>
+    <!-- End Navbar -->
+
+
+<!-- Resources Header -->
+<div class="page-header min-vh-50" style="background-image: url('https://ridebt.org/images/Images/Header_Images/Loops_Fall.png'); background-size: cover; background-position: center;">
+    <span class="mask bg-gradient-dark opacity-6"></span>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 mx-auto">
+          <div class="text-center">
+            <h1 class="text-white">Transportation</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card Section -->
+  <div class="container mt-5">
+    <div class="row d-flex align-items-stretch justify-content-center">
+      <!-- Card 1: Blacksburg Transit -->
+      <div class="col-lg-6 col-md-6 mb-4">
+        <a href="transportation.html" target="_blank" class="text-decoration-none">
+        <div class="card h-100 bg-light text-dark">
+          <div class="card-body text-center">
+            <i class="material-icons md-48">map</i>
+            <h4 class="card-title mt-3">Blacksburg Transit</h4>
+            <p class="card-text">Find your way around campus.</p>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <!-- Card 2: Parking -->
+      <div class="col-lg-6 col-md-6 mb-4">
+        <a href="https://parking.vt.edu/parking/students.html" target="_blank" class="text-decoration-none">
+        <div class="card h-100 bg-light text-dark">
+          <div class="card-body text-center">
+            <i class="material-icons md-48">local_parking</i>
+            <h4 class="card-title mt-3">Parking</h4>
+            <p class="card-text">Find parking around campus.</p>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <!-- Card 3: RideShare -->
+      <div class="col-lg-6 col-md-6 mb-4">
+        <a href="https://www.registrar.vt.edu/dates-deadlines/academic-calendar.html" target="_blank" class="text-decoration-none">
+        <div class="card h-100 bg-light text-dark">
+          <div class="card-body text-center">
+            <i class="material-icons md-48">calendar_today</i>
+            <h4 class="card-title mt-3">RideShare</h4>
+            <p class="card-text">Organize rides with other people.</p>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <!-- Card 4: Bikes -->
+      <div class="col-lg-6 col-md-6 mb-4">
+        <a href="https://foodpro.students.vt.edu/menus/" target="_blank" class="text-decoration-none">
+        <div class="card h-100 bg-light text-dark">
+          <div class="card-body text-center">
+            <i class="material-icons md-48">pedal_bike</i>
+            <h4 class="card-title mt-3">Bikes</h4>
+            <p class="card-text">All you need for a bike on campus.</p>
+          </div>
+        </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- End Card Section -->
+
+  <!--footer-->
+  <footer class="footer pt-5 mt-5 text-center">
+    <div class="container">
+      <p class="text-black">All rights reserved. Copyright © <script>document.write(new Date().getFullYear())</script> UniHub</p>
+    </div>
+  </footer>
+  <!--end footer-->
+
+  <!-- Bootstrap and JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
