@@ -77,7 +77,41 @@ h2.title {
       position: relative;
       z-index: 1;
     }
+
+
+    /* Container for the profile pictures */
+.profile-container {
+  text-align: center;
+  transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+/* Image styling */
+.profile-container img {
+  border-radius: 50%;
+  width: 200px; /* Adjust size as needed */
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+/* Text styling */
+.profile-container p {
+  font-size: 1.1rem;
+  color: #5f6368;
+  transition: font-weight 0.3s ease; /* Smooth transition for bolding */
+}
+
+/* Hover effect */
+.profile-container:hover img {
+  transform: scale(1.1); /* Increase image size */
+}
+
+.profile-container:hover p {
+  font-weight: bold; /* Make text bold */
+}
   </style>
+
+  
 
 </head>
 <body>
@@ -143,59 +177,74 @@ h2.title {
 
   <!-- Images Section in a single row -->
   <div class="row justify-content-center mt-5">
-    <div class="col-md-3 text-center" data-aos="fade-up" data-aos-duration="1000">
+    <div class="col-md-3 text-center about-us-images mb-4" data-aos="fade-up" data-aos-duration="1000">
       <img src="material-kit-master/assets/img/micheal_pic.jpg" class="img-fluid rounded-circle" alt="Michael Carrasquillo">
       <div class="description mt-2">
         <p>Michael Carrasquillo</p>
         <p>Junior, Computer Science</p>
       </div>
     </div>
-
-    <div class="col-md-3 text-center" data-aos="fade-up" data-aos-duration="1000">
+  
+    <div class="col-md-3 text-center about-us-images mb-4" data-aos="fade-up" data-aos-duration="1000">
       <img src="material-kit-master/assets/img/aarushi_pic.jpg" class="img-fluid rounded-circle" alt="Aarushi Sinha">
       <div class="description mt-2">
         <p>Aarushi Sinha</p>
         <p>Junior, Computer Engineering</p>
       </div>
     </div>
-
-    <div class="col-md-3 text-center" data-aos="fade-up" data-aos-duration="1000">
+  
+    <div class="col-md-3 text-center about-us-images mb-4" data-aos="fade-up" data-aos-duration="1000">
       <img src="material-kit-master/assets/img/sejal_pic.jpg" class="img-fluid rounded-circle" alt="Sejal Jain">
       <div class="description mt-2">
         <p>Sejal Jain</p>
         <p>Junior, Computer Science</p>
       </div>
     </div>
-
-    <div class="col-md-3 text-center" data-aos="fade-up" data-aos-duration="1000">
+  
+    <div class="col-md-3 text-center about-us-images mb-4" data-aos="fade-up" data-aos-duration="1000">
       <img src="material-kit-master/assets/img/aayan_pic.jpg" class="img-fluid rounded-circle" alt="Aayan Chaturvedi">
       <div class="description mt-2">
         <p>Aayan Chaturvedi</p>
         <p>Junior, Computer Science</p>
       </div>
     </div>
-  </div>
+  </div>  
 </div>
+
 
 <!-- CSS Styles -->
 <style>
-  .about-us-images img {
-      width: 100%;
-      height: 300px; /* Set a fixed height for uniformity */
-      object-fit: cover; /* This maintains the aspect ratio and crops the image if necessary */
-      border-radius: 10px; /* Optional: rounded corners */
-  }
+/* About Us Section Image and Text Hover Effect */
+.about-us-images {
+  text-align: center;
+  transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
 
-  .about-us-images .description {
-      margin-top: 10px; /* Add space above the description */
-  }
+/* Image styling */
+.about-us-images img {
+  border-radius: 50%;
+  width: 300px; /* Increase size */
+  height: 300px; /* Increase size */
+  object-fit: cover;
+  transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
 
-  .about-us-images .description p {
-      font-size: 1rem; /* Adjust the text size */
-      color: #555; /* Set text color */
-      margin: 5px 0; /* Reduce the margin to bring lines closer */
-      font-weight: bold; /* Make the text bold */
-  }
+/* Text styling */
+.about-us-images .description p {
+  font-size: 1.1rem;
+  color: #5f6368;
+  transition: all 0.3s ease; /* Smooth transition for bolding */
+}
+
+/* Hover effect */
+.about-us-images:hover img {
+  transform: scale(1.1); /* Increase image size */
+}
+
+.about-us-images:hover .description p {
+  font-weight: bold; /* Make text bold */
+  color: #333; /* Change text color for better visibility */
+}
 </style>
 <!-- end about us -->
 
